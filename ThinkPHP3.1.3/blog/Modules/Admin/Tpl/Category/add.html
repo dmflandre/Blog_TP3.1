@@ -1,0 +1,33 @@
+    <ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">分类管理</a></li>
+    </ul>
+    <div id="tab1" class="tabcontent">
+        <h3>添加分类</h3>
+
+		<form action="{:U('Category/doadd')}" method="post">
+        <div class="form">
+            
+			<div class="form_row">
+            <label>请选择上级分类:</label>
+            <select class="form_select" name="pid">
+            <option value="0">请选择</option>
+            <foreach name="cates" item='cate'>
+				<option value="{$cate.id}">{$cate.pre_name}</option>
+            </foreach>
+            </select>
+            </div>
+
+
+            <div class="form_row">
+            <label>分类名称:</label>
+            <input type="text" class="form_input" name="name" />
+            </div>
+            
+
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="提交" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>

@@ -1,0 +1,7 @@
+<?php
+	class CategoryAction extends Action{
+		public function index(){
+			$data = D("Category")->getTree();
+			dump($data);
+		}
+	}

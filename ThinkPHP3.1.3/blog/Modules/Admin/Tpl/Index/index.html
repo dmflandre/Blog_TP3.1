@@ -1,0 +1,25 @@
+<ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">网站界面管理</a></li>
+    </ul>
+
+    <div id="tab1" class="tabcontent">
+        <h3>图片设置</h3>
+        <form action="{:U('Index/modimg')}" method="post" enctype="multipart/form-data" id="mod">
+        <div class="form">
+
+            <div class="form_row">
+            <label>导航栏:</label>
+            <input type="file" name="pic" />
+			(请上传.jpg文件)
+			<br/>
+			<p>当前logo:</p>
+            <img style="max-width:100%;max-height:300px;" src="__COMMON__/images/logo.jpg" />
+            </div>
+
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="Submit" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>

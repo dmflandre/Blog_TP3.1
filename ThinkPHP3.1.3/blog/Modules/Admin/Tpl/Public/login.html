@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PSD407Blog后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__RES__/css/style.css" />
+</head>
+<body>
+<div id="loginpanelwrap">
+  	
+	<div class="loginheader">
+    <div class="logintitle"><a href="#">博客后台管理</a></div>
+    </div>
+    
+    <form action="{:U('Public/doLogin')}" method="post">
+    <div class="loginform">
+        
+        <div class="loginform_row">
+        <label>管理员账号:</label>
+        <input type="text" class="loginform_input" name="username" />
+        </div>
+
+        <div class="loginform_row">
+        <label>管理员密码:</label>
+        <input type="password" class="loginform_input" name="password" />
+        </div>
+
+        <div class="loginform_row">
+        <label>验证码:</label>
+        <input type="text" class="loginform_input" name="captcha" style="width:200px" />
+        <img src="{:U('Public/captcha')}" style="margin-left:5px;" onclick="show(this)" />
+        <script>
+            function show(obj){
+                obj.src = '{:U("Public/captcha","","")}/rand/'+Math.random();
+            }
+        </script>
+        </div>
+
+        <div class="loginform_row">
+        <input type="submit" class="loginform_submit" value="Login" />
+        </div> 
+        <div class="clear"></div>
+    </div>
+    </form>
+</div> 	
+</body>
+</html>

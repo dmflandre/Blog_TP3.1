@@ -1,0 +1,23 @@
+html{_background-image:url(about:blank);_background-attachment:fixed;}
+#wgToolBar{width:100%;height:30px;position:fixed;background:#000;left:0;text-align:left;z-index:9999;overflow:hidden;opacity:0.7;filter:alpha(opacity=70);-moz-opacity:.7;}
+#wgToolBar a{text-decoration:none;}
+#wgNotice{float:left;background:url(../images/notice_icon.gif) no-repeat 10px 3px;margin:0;padding:0 0 0 40px;}
+#wgNotice li{list-style-type:none;color:#fff;font:13px/30px Arial,SimSun;}
+#wgNotice li a{color:#fff;}
+#wgNotice li a:hover{color:#06c;}
+#wgSNS{float:right;padding:5px 10px 0 0;margin:0;}
+#wgSNS li{float:left;margin:0 5px;display:inline;list-style-type:none;}
+#wgSNS li a{width:20px;height:20px;display:block;background:url(../images/sns_icon.png) no-repeat;text-indent:-9999em;}
+#wgSNS li a:hover{transform:scale(1.5);-webkit-transform:scale(1.5);-moz-transform:scale(1.5);-o-transform:scale(1.5);}
+#wgSNS #tb_fav{background-position:0 0;}
+#wgSNS #tb_mail{background-position:0 -25px;}
+#wgSNS #tb_rss{background-position:0 -50px;}
+#wgSNS #tb_sohu{background-position:0 -75px;}
+#wgSNS #tb_twitter{background-position:0 -100px;}
+#wgSNS #tb_sina{background-position:0 -125px;}
+#wgSNS #tb_net163{background-position:0 -150px;}
+#wgSNS #tb_baidu{background-position:0 -175px;}
+#wgSNS #tb_douban{background-position:0 -200px;}
+#wgSNS #tb_facebook{background-position:0 -225px;}
+#wgSNS #tb_tencent{background-position:0 -250px;}
+#wgSNS #tb_digu{background-position:0 -275px;}

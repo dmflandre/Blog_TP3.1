@@ -1,0 +1,43 @@
+<h2>文章列表</h2> 
+                    
+                    
+<table id="rounded-corner">
+    <thead>
+    	<tr>
+        	<th></th>
+            <th>文章ID</th>
+            <th>文章标题</th>
+            <th>作者</th>
+            <th>发表时间</th>
+            <th>发表IP</th>
+            <th>所属分类</th>
+            <th>编辑</th>
+            <th>删除</th>
+        </tr>
+    </thead>
+        <tfoot>
+    	<tr>
+        	<td colspan="12">分页</td>
+        </tr>
+    </tfoot>
+    <tbody>
+    	<foreach name="arts" item="art">
+    	<tr class="odd">
+        	<td><input type="checkbox" name="" /></td>
+            <td>{$art.id}</td>
+            <td>{$art.title|mb_substr=0,8,'utf-8'}...</td>
+            <td>{$art.username}</td>
+            <td>{$art.ptime|date="Y-m-d H:i:s",###}</td>
+            <td>{$art.pip|long2ip}</td>
+            <td>{$art.pname}</td>
+            <td><a href="#"><img src="__RES__/images/edit.png" alt="" title="" border="0" /></a></td>
+            <td><a href="#"><img src="__RES__/images/trash.gif" alt="" title="" border="0" /></a></td>
+        </tr>
+        </foreach>
+    </tbody>
+</table>
+
+	<div class="form_sub_buttons">
+	<a href="#" class="button green">Edit selected</a>
+    <a href="#" class="button red">Delete selected</a>
+    </div>

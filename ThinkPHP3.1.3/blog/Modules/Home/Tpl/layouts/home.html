@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="__RES__/style/main.css">
+
+	<style type="text/css">
+body{
+	margin: 0px;
+	padding: 0px;
+	background: url("__COMMON__/images/camouflage.png");
+	color: white;
+}
+.hr{
+	width:95%;
+	height: 20px;
+	background: url("__RES__/images/hr.jpg") repeat-x bottom;
+	margin: 10px;
+}
+	</style>
+</head>
+<body>
+	<div id="totaldiv">
+		<!--head部分-->
+		<div id="head">
+			<div class="headtitle"><b>Flandre's Blog</b>
+				<div class="serch">
+				<form method="get" class="searchform" action="{:U('Index/index')}">
+					<input type="text" name="serch" value="{$serch}" placeholder="搜索" />
+					<input type="submit" value="搜索" />
+				</form>
+				</div>
+			</div>
+			<div class="headdown">芙兰朵露出没☆分享资源★分享快乐</div>
+			<div class="logo"><img src="__COMMON__/images/logo.jpg"/></div>
+				<div id="navi" class="clearfix" >
+						<li><a href="{:U('Index/index')}">最新投稿</a></li>
+					<foreach name="menu" item="m">
+						<li><a href="{:U('Index/cates')}?c={$m.id}">{$m.name}</a></li>
+					</foreach>
+						<li><a href="">使用说明</a></li>
+					
+				</div>
+		</div>
+		<!--head部分结束-->
+
+
+{__CONTENT__}
+<div class="hr" style="width:100%;margin:10px auto;"></div>
+		<!--尾部部分开始-->
+
+		<div id="foot">
+			
+			<div id="supplementary" class="two">
+			<div id="first" class="widget-area" role="complementary">
+			<aside id="text-8" class="widget widget_text">			<div class="textwidget"><p>联系合作：dmflandre@gmail.com<br />
+			少上点网，多点运动；好好学习，天天向上。</p>
+			<p><script src="/js/my.js" type="text/javascript"></script></p>
+			</div>
+			</aside>	</div><!-- #first .widget-area -->
+
+			<div id="second" class="widget-area" role="complementary">
+			<aside id="text-11" class="widget widget_text">			<div class="textwidget"><p>本站不提供任何上传下载服务，所有内容均来自分享站点所提供的公开引用资源。 如果有版权内容，请通知作者删除。</p>
+			<p>如果网页显示不正常，请升级到 IE9 及以上<br />
+			推荐使用 IE11、Firefox、Chrome 等专业浏览器</p>
+			</div>
+			</aside>	</div><!-- #second .widget-area -->
+
+			</div><!-- #supplementary -->
+
+
+			<div id="downdown">
+
+			下面什么都木有了哦
+
+			</div>
+		</div>
+		<!--尾部部分结束-->
+	</div>
+</body>
+</html>

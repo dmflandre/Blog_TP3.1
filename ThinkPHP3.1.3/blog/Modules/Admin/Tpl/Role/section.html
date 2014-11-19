@@ -1,0 +1,18 @@
+<foreach name="nodes" item="node">
+            
+	<div class="section">
+	    <div class="controller">
+	    <input type="checkbox" name="nid[]" value="{$node.id}" <if condition="in_array($node['id'],$nids)">checked</if> >
+	    {$node.name}Action-{$node.zname}
+	    </div>
+	    <div class="actions">
+	    <foreach name="node['actions']" item="action">
+	        <div class="action">
+	        <input type="checkbox" name="nid[]" value="{$action.id}" <if condition="in_array($action['id'],$nids)">checked</if> >
+	        {$action.name}-{$action.zname}</div>
+	    </foreach>
+	    </div>
+	</div>
+	<div class="clear"></div>
+        
+</foreach>

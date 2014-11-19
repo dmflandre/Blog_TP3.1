@@ -1,0 +1,65 @@
+<style>
+    .clear{
+        clear:both;
+        height:30px;
+    }
+    .section{
+        font-family:'Microsoft Yahei';
+        margin-bottom:30px;
+    }
+    .controller{
+        font-size:15px;
+        color:#333;
+        height:50px;
+        line-height:50px;
+        border-bottom:1px dashed #333;
+        color:red;
+    }
+    .actions{
+        padding:10px;
+        font-size:13px;
+        margin-top:15px;
+    }
+    .action{
+        float:left;
+        width:150px;
+        text-align:left;
+        height:30px;
+    }
+</style>
+<ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">角色管理</a></li>
+    </ul>
+    <div id="tab1" class="tabcontent">
+        <h3>添加角色</h3>
+        <form action="{:U('User/addrole')}" method="post">
+        <div class="form">
+            <input type="hidden" name="uid" value="{$Think.get.id}" />
+            <div class="form_row">
+            <label>用户名:</label>
+            <input type="text" class="form_input" name="username" value="{$username}" disabled />
+            </div>
+
+            <div class="clear"></div>
+            
+            <div class="section">
+                <div class="controller">角色列表</div>
+                <div class="actions">
+                
+                <foreach name="roles" item="role">
+                    <div class="action">
+                    <input type="checkbox" name="rid[]" value="{$role.id}" <if condition="in_array($role['id'],$rids)">checked</if> >{$role.name}</div>
+                </foreach>    
+                
+                </div>
+            </div>
+
+            <div class="clear"></div>
+            
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="设置" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>

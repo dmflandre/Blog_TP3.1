@@ -1,0 +1,30 @@
+    <ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">会员管理</a></li>
+    </ul>
+    <div id="tab1" class="tabcontent">
+        <h3>添加会员</h3>
+        <form action="{:U('User/doadd')}" method="post">
+        <div class="form">
+            
+            <div class="form_row">
+            <label>用户名:</label>
+            <input type="text" class="form_input" name="username" />
+            </div>
+
+            <div class="form_row">
+            <label>密码:</label>
+            <input type="password" class="form_input" name="password" />
+            </div>
+
+            <div class="form_row">
+            <label>确认密码:</label>
+            <input type="password" class="form_input" name="repass" />
+            </div>
+             
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="添加" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>

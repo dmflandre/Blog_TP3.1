@@ -1,0 +1,36 @@
+    <ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">会员管理</a></li>
+    </ul>
+
+    <div id="tab1" class="tabcontent">
+        <h3>修改密码</h3>
+        <form action="{:U('User/domodpass')}" method="post">
+        <div class="form">
+            
+            <div class="form_row">
+            <label>用户名:</label>
+            <input type="text" class="form_input" name="username" disabled="disabled" value="{$Think.session.admin.username}" />
+            </div>
+             
+            <div class="form_row">
+            <label>原始密码:</label>
+            <input type="password" class="form_input" name="oldpass" />
+            </div>
+
+            <div class="form_row">
+            <label>新密码:</label>
+            <input type="password" class="form_input" name="newpass" />
+            </div>
+
+            <div class="form_row">
+            <label>确认密码:</label>
+            <input type="password" class="form_input" name="repass" />
+            </div>
+
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="修改" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>

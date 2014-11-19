@@ -1,0 +1,81 @@
+
+		<!--中间部分开始-->
+		<div id="center" class="clearfix">
+			<!--中左部分开始-->
+			<div id="leftcenter" >
+				<div class="cateinfo">
+					您正在阅览  {$catename}  专区的所有文章
+				</div>
+				<foreach name="arts" item="art">
+				<div class="content">
+					<header>
+					<h1><a href="{:U('Art/word')}?w={$art.id}">{$art.title}</a></h1>
+
+					<div class="top-content">
+					发表于<a href="">{$art.ptime|date="m月d日",###}</a>由 
+					<a  href="" title="查看所有由 {$art.username} 发布的文章" >{$art.username}</a>
+					</div><!-- .entry-meta -->
+
+					<!-- <div class="comments-link">
+					<a href="">0</a>	</div>
+					</header> -->
+
+					<div class="entry-content">
+					<p><img src="__PUBLIC__/uploads/{$art.pic}" alt=""><br>
+					{$art.content|mb_substr=0,50,'utf-8'|strip_tags}…… <a href="{:U('Art/word')}?w={$art.id}" >查看全文 <span >→</span></a></p>
+					</div><!-- .entry-content -->
+
+					<div class="foot-content">
+					
+					发表在 </span><a href="{:U('Index/cates')}?c={$art.cid}" title="查看{$art.cname}中的全部文章">{$art.cname}</a> 专区
+					
+
+					<!--
+					<span class="sep"> | </span>
+					<span class="tag-links">
+					<span class="">标签有</span><a href="" rel="tag">南野琴</a>、<a href="" rel="tag">琉璃神社汉化</a>	</span>
+
+					<span class="sep"> | </span>
+					<span class=""><a href="">20条回复</a></span>
+					-->
+
+					<div class="hr"></div>
+					</div><!-- #entry-meta -->
+				</div>
+				</foreach>
+				{$link}
+			</div>
+			<!--中左部分结束-->
+			<!--中右部分开始-->
+			<div id="rightcenter" >
+				<div class="login" >
+					<h3>登入</h3>
+					<form name="loginform" id="loginform" action="{:U('admin/Public/dologineasy')}" method="post">
+						<p >
+						<label >用户名</label><br/>
+						<input name="username" size="20" type="text"/>
+						</p>
+						<p >
+						<label>密码</label><br/>
+						<input name="password" value="" size="20" type="password">
+						</p>
+						<p ><label><input name="rememberme" checked="checked" type="checkbox"> 记住我</label></p>
+						
+						<input  value="登入" type="submit">
+			
+					</form>
+					<a href="" alt="密码丢失了我也没办法，诶嘿~" title="密码丢失了我也没办法，诶嘿~">丢失密码?</a><P></P>
+					<a href="{:U('admin/Article/add')}" alt="点此分享新文章" title="点此分享新文章">分享新文章</a>
+				</div>
+				
+				<div class="randart ">
+					<p>随机推荐</p>
+					<foreach name="randArt" item="art">
+			  			<li class="clearfix"><img src="__PUBLIC__/uploads/{$art.upic}"/><a href="" title="{$art.title}">{$art.title}</a>{$art.content|strip_tags|mb_substr=0,10,'utf-8'}</li>
+			  		</foreach>
+				</div>
+			
+			</div>
+			<!--中右部分结束-->
+		</div>
+		<!--中间部分结束-->

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Panelo - Free Admin Template</title>
+<link rel="stylesheet" type="text/css" href="__RES__/css/style.css" />
+
+<!-- jQuery file -->
+<script src="__RES__/js/jquery.min.js"></script>
+<script src="__RES__/js/jquery.tabify.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var $ = jQuery.noConflict();
+$(function() {
+$('#tabsmenu').tabify();
+$(".toggle_container").hide(); 
+$(".trigger").click(function(){
+	$(this).toggleClass("active").next().slideToggle("slow");
+	return false;
+});
+});
+</script>
+</head>
+<body>
+<div id="panelwrap">
+  	
+	<div class="header">
+    <div class="title"><a href="#">Flandre的博客后台管理页面</a></div>
+    
+    <div class="header_right">欢迎您回来 {$Think.session.admin.username}, <a href="{:U('User/modpass')}" class="settings">修改密码</a> <a href="{:U('Public/logout')}" class="logout">退出</a> </div>
+<!--
+    <div class="menu">
+    <ul>
+    <li><a href="#" class="selected">Main page</a></li>
+    <li><a href="#">Settings</a></li>
+    <li><a href="#">Add a category</a></li>
+    <li><a href="#">Edit categories</a></li>
+    <li><a href="#">Categories</a></li>
+    <li><a href="#">Options</a></li>
+    <li><a href="#">Admin settings</a></li>
+    <li><a href="#">Help</a></li>
+    </ul>
+    </div>
+-->
+    </div>
+<!--
+    <div class="submenu">
+    <ul>
+    <li><a href="#" class="selected">settings</a></li>
+    <li><a href="#">users</a></li>
+    <li><a href="#">categories</a></li>
+    <li><a href="#">edit section</a></li>
+    <li><a href="#">templates</a></li>
+    </ul>
+    </div>          
+-->           
+    <div class="center_content">  
+ <hr/>
+    <div id="right_wrap">
+    <div id="right_content">   
+
+{__CONTENT__}
+
+     </div>
+     </div><!-- end of right content-->
+                     
+                    
+    <div class="sidebar" id="sidebar">
+    <h2>会员管理</h2>
+    
+        <ul>
+            <li><a href="{:U('User/add')}" class="selected">添加会员</a></li>
+            <li><a href="{:U('User/index')}">会员列表</a></li>
+        </ul>
+
+    <h2>角色管理</h2>
+    
+        <ul>
+            <li><a href="{:U('Role/add')}" class="selected">添加角色</a></li>
+            <li><a href="{:U('Role/index')}">角色列表</a></li>
+            <li><a href="{:U('Role/auth')}">设置权限</a></li>
+        </ul>
+        
+    <h2>分类管理</h2>
+    
+        <ul>
+            <li><a href="{:U('Category/add')}">添加分类</a></li>
+            <li><a href="{:U('Category/index')}">分类列表</a></li>
+        </ul> 
+        
+    <h2>文章管理</h2>
+    
+        <ul>
+            <li><a href="{:U('Article/add')}">添加文章</a></li>
+            <li><a href="{:U('Article/index')}">文章列表</a></li>
+        </ul> 
+
+    <h2>权限节点管理</h2>
+    
+        <ul>
+            <li><a href="{:U('Node/add')}" class="selected">添加节点</a></li>
+            <li><a href="{:U('Node/index')}">节点列表</a></li>
+        </ul>  
+         
+    <h2>进入主页</h2> 
+    
+        <ul>
+            <li><a href="{:U('home/Index/index')}">Flandre's Blog</a></li>
+            <li><a href="{:U('Index/index')}">后台主页</a></li>
+        </ul>  
+
+    </div>
+    </div>             
+    
+    
+    <div class="clear"></div>
+    </div> <!--end of center_content-->
+    
+    <div class="footer">
+Panelo - Free Admin Collect from <a href="http://www.mycodes.net/" title="网站模板" target="_blank">网站模板</a>
+</div>
+
+</div>
+
+    	
+</body>
+</html>

@@ -1,0 +1,173 @@
+<style>
+    .sex{
+        float:none;
+    }
+    span{
+        color:#666;
+        padding:5px;
+        line-height:35px;
+    }
+    .form_input,.form_select,.form_textarea,option{
+        width:400px;
+    }
+    .error{
+        color:red;
+    }
+    .right{
+        color:green;
+    }
+</style>
+    <ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">会员管理</a></li>
+    </ul>
+
+    <div id="tab1" class="tabcontent">
+        <h3>编辑会员</h3>
+        <form action="{:U('User/domod')}" method="post" enctype="multipart/form-data" id="mod">
+        <div class="form">
+            
+            <div class="form_row">
+            <label>UID:</label>
+            <input type="text" class="form_input" name="uid" value="{$user.uid}" readonly />
+            </div>
+
+            <div class="form_row">
+            <label>用户名:</label>
+            <input type="text" class="form_input" name="username" value="{$user.uname}" readonly />
+            </div>
+
+            <div class="form_row">
+            <label>真实姓名:</label>
+            <input type="text" class="form_input" name="t_name" value="{$user.t_name}" />
+            <span></span>
+            </div>
+
+            <div class="form_row">
+            <label>年龄:</label>
+            <input type="text" class="form_input" name="age" value="{$user.age}" />
+            <span></span>
+            </div>
+
+            <div class="form_row" >
+            <label>性别:</label>
+            <foreach name="tmpl_sex" key='val' item='display'>
+
+                <label class="sex"><input type="radio" name="sex" value="{$val}" />{$display}</label>
+
+            </foreach>
+            <span></span>
+            </div>
+             
+            <div class="form_row">
+            <label>Email:</label>
+            <input type="text" class="form_input" name="email" value="{$user.email}" />
+            <span></span>
+            </div>
+            
+            <div class="form_row">
+            <label>学历:</label>
+            <select class="form_select" name="edu" style="width:406px">
+                <foreach name="tmpl_edu" key='val' item='display'>
+                    <option value="{$val}">{$display}</option>
+                </foreach>
+            </select>
+            </div>
+            
+            <div class="form_row">
+            <label>个性签名:</label>
+            <textarea class="form_textarea" name="signed">{$user.signed}</textarea>
+            </div>
+
+            <div class="form_row">
+            <label>头像:</label>
+            <input type="file" name="pic" />
+
+            <img src="__PUBLIC__/uploads/small_{$user.pic}" />
+            </div>
+
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="Submit" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>
+
+<script>
+//真实姓名的验证
+$("#mod").find("input[name=t_name]").focus(function(){
+    var str = '请输入真实姓名';
+    $(this).next("span").html(str).removeAttr("class");
+}).blur(function(){
+    //判断值是否为空，不为空执行验证
+    if($(this).val()!=''){
+        //验证数据
+        var pattern = /^(本拉登|奥巴马|萨达姆|傻X)$/;
+        if(pattern.test($(this).val())){
+            var error = '该姓名不能被用';
+            $(this).next("span").html(error).attr('class','error');
+        }else{
+            var info = '该姓名可以合法';
+            $(this).next("span").html(info).attr('class','right');
+        }
+    }
+});
+
+//年龄的验证
+$("#mod").find("input[name=age]").focus(function(){
+    var str = '0-150之间的整型';
+    $(this).next('span').html(str).removeAttr("class");
+}).blur(function(){
+    //验证这个值是否为空
+    if($(this).val()!=''){
+        //执行验证
+        //1.验证是否为数字
+        var pattern = /\d+/;
+        if(pattern.test($(this).val())){
+            if($(this).val()>=0 && $(this).val()<=150){
+                var info = '年龄合法';
+                $(this).next("span").html(info).attr('class','right');
+            }else{
+                var info = '年龄不合法';
+                $(this).next("span").html(info).attr('class','error');
+            }
+        }else{
+            var info = '年龄不合法';
+            $(this).next("span").html(info).attr('class','error');
+        }
+    }
+});
+
+//email
+$("#mod").find("input[name=email]").blur(function(){
+    //1.判断值是否为空
+    if($(this).val()!=''){
+        //验证值的格式
+        //1231abcd_23@lamp.com
+        var pattern = /^\w+@[0-9a-z-]+\.[a-z]+(\.[a-z]+)?$/i;
+        if(pattern.test($(this).val())){
+            var info = '邮箱合法';
+            $(this).next("span").html(info).attr('class','right');
+        }else{
+            var info = '邮箱不合法';
+            $(this).next("span").html(info).attr('class','error');
+        }
+    }
+}).focus(function(){
+    var str = "请填写正确邮箱";
+    $(this).next("span").html(str).removeAttr('class');
+});
+
+//阻止默认行为
+$("#mod").submit(function(e){
+    //触发所有的控件的blur事件
+    $(this).find(":input").trigger("blur");
+
+    //判断每一个组件是否有错误，如果没有错误，直接提交
+    if($("#mod").find("span").hasClass("error")){
+        //提交表单
+       e.preventDefault();
+    }
+});
+
+</script>

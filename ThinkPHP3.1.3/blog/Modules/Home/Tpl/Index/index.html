@@ -1,0 +1,166 @@
+
+		<!--中间部分开始-->
+		<div id="center" class="clearfix">
+			<!--中左部分开始-->
+			<div id="leftcenter" >
+				<div id="lunhuan">
+
+					<script type="text/javascript" src="__RES__/style/jquery.js"></script>
+					<link rel="stylesheet" type="text/css" href="__RES__/style/lunhuan.css">
+					<div id="ifocus">
+						<div id="ifocus_pic">
+							<div id="ifocus_piclist" style="left: 0px; top: 0px;">
+								<ul style="margin:0px;padding:0px;list-style:none; ">
+									<li>
+										<a href="#" target="_blank">
+											<img src="__RES__/images/lh01.jpg" width="550" height="225" alt="" border="0">
+										</a>
+									</li>
+									<li>
+										<a href="#" target="_blank">
+											<img src="__RES__/images/lh02.jpg" width="550" height="225" alt="" border="0">
+										</a>
+									</li>
+									<li>
+										<a href="#" target="_blank">
+											<img src="__RES__/images/lh03.jpg" width="550" height="225" alt="" border="0">
+										</a>
+									</li>
+									<li>
+										<a href="#" target="_blank">
+										 <img src="__RES__/images/lh04.jpg" width="550" height="225" alt="" border="0">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div id="ifocus_opdiv">
+							</div>
+							<div id="ifocus_tx">
+								<ul style="margin:0px;padding:0px;list-style:none; ">
+									<li class="current">
+										本周新品：To Love To LOVE 结城美柑
+									</li>
+									<li class="normal">
+										本周推荐：阿良良木 月火 手办 伪物语 凤凰不死鸟 红色和服
+									</li>
+									<li class="normal">
+										精品推荐：东方project 大小姐 手办 神枪 蕾米莉亚·斯卡雷特
+									</li>
+									<li class="normal">
+										【教程】游戏出现乱码 无法打开等情况 一些通用解决方案
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div id="ifocus_btn">
+							<ul style="margin:0px;padding:0px;list-style:none; ">
+								<li class="current">
+									<img src="__RES__/images/lh01.jpg" width="90" height="47" alt="">
+								</li>
+								<li class="normal">
+									<img src="__RES__/images/lh02.jpg" width="90" height="47" alt="">
+								</li>
+								<li class="normal">
+									<img src="__RES__/images/lh03.jpg" width="90" height="47" alt="">
+								</li>
+								<li class="normal">
+									<img src="__RES__/images/lh04.jpg" width="90" height="47" alt="">
+								</li>
+							</ul>
+						</div>
+					</div>
+					<script src="__RES__/style/sd.js"></script>
+					<script type="text/javascript">
+					//jq
+					var is							= jQuery;
+					var reduce_width				= (document.body.clientWidth < 500) ? 260 : 200;
+					var body_width					= 947 - document.body.clientWidth - reduce_width;
+					var ifocus_width				= is("#ifocus").width() - body_width;
+					var ifocus_pic_width			= is("#ifocus_pic").width() - body_width;
+					var ifocus_piclist_li_width		= is("#ifocus_piclist li").width() - body_width;
+					var ifocus_piclist_img_width	= is("#ifocus_piclist img").width() - body_width;
+					if(body_width > 0){
+					is("#ifocus").width(ifocus_width);
+					is("#ifocus_pic").width(ifocus_pic_width);
+					is("#ifocus_piclist li").width(ifocus_piclist_li_width);
+					is("#ifocus_piclist img").width(ifocus_piclist_img_width);
+					}
+					//jq
+					</script>
+				</div>
+				<foreach name="arts" item="art">
+				<div class="content">
+					<header>
+					<h1><a href="{:U('Art/word')}?w={$art.id}">{$art.title}</a></h1>
+
+					<div class="top-content">
+					发表于<a href="">{$art.ptime|date="m月d日",###}</a>由 
+					<a  href="" title="查看所有由 {$art.username} 发布的文章" >{$art.username}</a>
+					</div><!-- .entry-meta -->
+
+					<!-- <div class="comments-link">
+					<a href="">0</a>	</div>
+					</header> -->
+
+					<div class="entry-content">
+					<p><img src="__PUBLIC__/uploads/{$art.pic}" alt=""><br>
+					{$art.content|strip_tags|mb_substr=0,50,'utf-8'}…… <a href="{:U('Art/word')}?w={$art.id}" >查看全文 <span >→</span></a></p>
+					</div><!-- .entry-content -->
+
+					<div class="foot-content">
+					
+					发表在 </span><a href="{:U('Index/cates')}?c={$art.cid}" title="查看{$art.cname}中的全部文章">{$art.cname}</a> 专区
+					
+
+					<!--
+					<span class="sep"> | </span>
+					<span class="tag-links">
+					<span class="">标签有</span><a href="" rel="tag">南野琴</a>、<a href="" rel="tag">琉璃神社汉化</a>	</span>
+
+					<span class="sep"> | </span>
+					<span class=""><a href="">20条回复</a></span>
+					-->
+
+					<div class="hr"></div>
+					</div><!-- #entry-meta -->
+				</div>
+				</foreach>
+				{$link}
+			</div>
+			<!--中左部分结束-->
+			<!--中右部分开始-->
+			<div id="rightcenter" >
+				<div class="login" >
+					{$loginform}
+					<!-- <h3>登入</h3>
+					<form name="loginform" id="loginform" action="{:U('admin/Public/dologineasy')}" method="post">
+						<p >
+						<label >用户名</label><br/>
+						<input name="username" size="20" type="text"/>
+						</p>
+						<p >
+						<label>密码</label><br/>
+						<input name="password" value="" size="20" type="password">
+						</p>
+						<p ><label><input name="rememberme" checked="checked" type="checkbox"> 记住我</label></p>
+						
+						<input  value="登入" type="submit">
+								
+					</form>
+					<a href="" alt="密码丢失了我也没办法，诶嘿~" title="密码丢失了我也没办法，诶嘿~">丢失密码?</a><P></P>
+					
+					<a href="{:U('admin/Article/add')}" alt="点此分享新文章" title="点此分享新文章">分享新文章</a> -->
+				</div>
+				
+				<div class="randart ">
+					<p>您可能也喜欢</p>
+					<foreach name="randArt" item="art">
+			  			<li class="clearfix"><img src="__PUBLIC__/uploads/{$art.upic}"/><a href="" title="{$art.title}">{$art.title}</a>{$art.content|strip_tags|mb_substr=0,20,'utf-8'}……</li>
+			  		</foreach>
+				</div>
+				<br/>
+				<div><br/><br/><br/>广告位招租什么的= =</div>
+			</div>
+			<!--中右部分结束-->
+		</div>
+		<!--中间部分结束-->

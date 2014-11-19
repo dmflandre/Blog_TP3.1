@@ -1,0 +1,40 @@
+
+
+		<div id="content"><!--默认类型-->
+		<foreach name="arts" item="art">
+			<div class="defaulttop">
+				<h2>
+					<a href="" rel="bookmark">{$art.title}</a>
+					<span class="posttime right">{$art.ptime|date="m月d日",###}</span>
+				</h2>
+			</div>
+			<div class="defaultbody">
+				<section class="thcon">
+					<div class="selfthum">
+						<a href="# " rel="nofollow">
+							<img src="__PUBLIC__/uploads/thumb_{$art.pic}" alt="{$art.title}" class="thumb" />
+						</a>
+					</div>
+					<div class="content_post defaultpost">
+						{$art.content|mb_substr=0,200,'utf-8'|strip_tags}……	
+						<div class="clear"></div>
+						<div class="postmeta">
+							<span class="postauthor">{$art.username}</span>									<span class="postinfoviews"></span>									
+							<span class="defaulttag">
+								<a href="" rel="tag">{$art.pname}</a>
+							</span>									
+							<span class="readmore">
+								<a href="" rel="nofollow">阅读全文</a>
+							</span>
+							<div style="margin-bottom:20px"></div>
+						</div>
+					</div>
+				</section>					
+			</div>
+			<div class="defaultbot"></div>
+			<div class="sep"></div>										 <!--默认类型-->
+			</foreach>
+								
+			<div id="postnavigation"></div>
+			<div class="clear"></div>
+		</div><!--end content-->

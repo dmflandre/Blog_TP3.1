@@ -1,0 +1,36 @@
+
+		<!--中间部分开始-->
+		<div id="center" class="clearfix">
+			<div class="head">
+				发表于<a href="">{$art.ptime|date="Y年m月d日",###}</a>由 
+				<a  href="" title="查看所有由 {$art.username} 发布的文章" >{$art.username}</a>
+			</div>
+			<div class="word">
+				
+				<h1>{$art.title}</h1>
+
+
+				<div class="entry-word">
+				<p><img src="__PUBLIC__/uploads/{$art.pic}" alt=""><br>
+				{$art.content}</p>
+				</div><!-- .entry-content -->
+
+				<div class="foot-word">
+				
+				此条目由<a  href="" title="查看所有由 {$art.username} 发布的文章" >{$art.username}</a>发表在 </span><a href="{:U('Index/cates')}?c={$art.cid}" title="查看{$art.cname}中的全部文章">{$art.cname}</a> 分类目录
+				
+
+				<!--
+				<span class="sep"> | </span>
+				<span class="tag-links">
+				<span class="">标签有</span><a href="" rel="tag">南野琴</a>、<a href="" rel="tag">琉璃神社汉化</a>	</span>
+
+				<span class="sep"> | </span>
+				<span class=""><a href="">20条回复</a></span>
+				-->
+
+				
+				</div><!-- #entry-meta -->
+			</div>
+		</div>
+		<!--中间部分结束-->

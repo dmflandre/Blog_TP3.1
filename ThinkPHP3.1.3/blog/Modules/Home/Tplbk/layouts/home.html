@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9;IE=8;IE=7" />
+<title>死亡诗社</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="死亡诗社|不忍直视的|June|田园天地|hermit|唯美|博客|简约淡雅" />
+<meta name="keywords" content="死亡诗社,不忍直视的,June,田园天地,hermit,唯美,博客,简约淡雅,漂流瓶,巴黎街道" />
+<link rel="stylesheet" type="text/css" media="screen" href="__RES__/css/reset.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="__RES__/css/style.css" />
+<!--[if IE 8]><link rel="stylesheet" href="__RES__/css/ie8.css" type="text/css" media="screen" /><![endif]-->
+<style>#container{padding-top:56px;}#topbar{position:absolute;}</style>
+<script type="text/javascript" src="__RES__/js/jquery.min.js"></script>
+<script type="text/javascript">
+	window.jQuery || document.write('<script type="text/javascript" src="__RES__/js/jquery.js">\x3C/script>')
+</script>
+<!--[if lt IE 9]>
+	<script src="__RES__/js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript"> 
+	jQuery(document).ready(function($) {
+		$body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');$('.commentnav a').live('click', function(e){e.preventDefault();$.ajax({type: "GET",url: $(this).attr('href'),beforeSend: function(){$('.commentnav').remove();$('.commentlist').remove();$('#loading-comments').slideDown();},dataType: "html",success: function(out){result = $(out).find('.commentlist');nextlink = $(out).find('.commentnav');$('#loading-comments').slideUp(500);$('#loading-comments').after(result.fadeIn(800));$('.commentlist').after(nextlink);}});})
+		$(function() {
+			$("a.et_smilies").click(function() {
+				$('#smilies-container').toggle(function() {
+					$(document).click(function(event) {
+						if (!($(event.target).is('#smilies-container') || $(event.target).parents('#smilies-container').length || $(event.target).is('a.et_smilies'))) {
+							$('#smilies-container').hide(500);
+						}
+					});
+				});
+			});
+		});
+		$(function() {// comment editor
+		function addEditor(a, b, c) {
+			if (document.selection) {
+				a.focus();
+				sel = document.selection.createRange();
+				c ? sel.text = b + sel.text + c: sel.text = b;
+				a.focus()
+			} else if (a.selectionStart || a.selectionStart == '0') {
+				var d = a.selectionStart;
+				var e = a.selectionEnd;
+				var f = e;
+				c ? a.value = a.value.substring(0, d) + b + a.value.substring(d, e) + c + a.value.substring(e, a.value.length) : a.value = a.value.substring(0, d) + b + a.value.substring(e, a.value.length);
+				c ? f += b.length + c.length: f += b.length - e + d;
+				if (d == e && c) f -= c.length;
+				a.focus();
+				a.selectionStart = f;
+				a.selectionEnd = f
+			} else {
+				a.value += b + c;
+				a.focus()
+			}
+		}
+		var g = document.getElementById('comment') || 0;
+		var h = {
+			strong: function() {
+				addEditor(g, '<strong>', '</strong>')
+			},
+			em: function() {
+				addEditor(g, '<em>', '</em>')
+			},
+			del: function() {
+				addEditor(g, '<del>', '</del>')
+			},
+			underline: function() {
+				addEditor(g, '<u>', '</u>')
+			},
+			ahref: function() {
+				var a = prompt('请输入链接地址', 'http://');
+				var b = prompt('请输入链接描述','');
+				if (a) {
+					addEditor(g, '<a target="_blank" href=”' + a + '" rel="external”>' + b + '</a>','')
+				}
+			},
+			empty: function(){
+				g.value="";g.focus()
+			},
+			fontColor: function() {
+				var a = prompt("\u8f93\u5165\u989c\u8272css\u503c", "#000000");
+				a && addEditor(g, "[color=#" + a.match(/[^#]{3,6}/gi)[0] + "]", "[/color]")
+			},
+		};
+		window['SIMPALED'] = {};
+		window['SIMPALED']['Editor'] = h
+	});
+	});
+</script>
+<link rel="stylesheet" href="__RES__/css/highslide.css" type="text/css" />
+<script type="text/javascript" src="__RES__/js/highslide-with-gallery.packed.js"></script>
+<link rel='stylesheet' id='toolBarStyleSheet-css'  href='__RES__/css/style2.css' type='text/css' media='all' />
+<script type='text/javascript' src='__RES__/js/jquery.js'></script>	
+
+<style type="text/css">
+	body{margin-bottom:30px;}#wgToolBar{border-radius:5px 5px 0 0;box-shadow:0px -5px 5px #565656;-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-khtml-border-radius:5px 5px 0 0;-webkit-box-shadow:0px -5px 5px #565656;-moz-box-shadow:0px -5px 5px #565656;bottom:0;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,0)||0)-(parseInt(this.currentStyle.marginBottom,0)||0)));}	
+</style>
+<script type="text/javascript" src="__RES__/js/gundong.js"></script>
+</head>
+<body>
+	<div id="topbar">
+		<div class="topbar_width clearfix">
+			<a class="homeicon" href=""></a>
+			<div id="firstnav"><!--第一个菜单-->
+				<div id="nav-auto">
+					<ul id="nav" class="menu">
+						<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-17">
+						<a href="{:U('Index/index')}">首页</a>
+						</li>
+<style>
+	.category{
+		width:105px;
+		float:left;
+	}
+	.cate{
+		background:white;
+		height:150px;
+		border:1px solid #ccc;
+		display:none;
+	}
+	.clear{
+		clear:both;
+	}
+</style>
+<foreach name="menu" item="m">
+	<div class="category">
+		<li id="menu-item-6" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6">
+		<a href="">{$m.name}</a>
+		</li>
+		<div class="clear"></div>
+		<div class="cate">
+			<foreach name="m['sons']" item="son">
+				<li><a href="">{$son.name}</a></li>
+			</foreach>
+		</div>
+	</div>
+</foreach>
+<script>
+	$(".category").hover(function(){
+		$(this).find(".cate").show();
+	},function(){
+		$(this).find(".cate").hide();
+	});//mouseenter mouseleave
+</script>					
+					</ul>				
+				</div>
+			</div>
+			<div id="secondnav"><!--第2个菜单-->
+				<div class="menu-%e9%a6%96%e9%a1%b5-container">
+					<ul id="menu-%e9%a6%96%e9%a1%b5" class="menu">
+						<li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
+						<a href="">腾讯微博</a>
+						</li>
+						<li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8">
+						<a href="">人人主页</a>
+						</li>
+						<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9">
+						<a href="">QQ空间</a>
+						</li>
+						<li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45">
+						<a href="">登录</a>
+						</li>
+					</ul>
+				</div>			
+			</div>
+			
+			<div id="search"><!--搜索-->
+				<div class="searchbarswitch"></div>
+				<div class="searchbar">
+					<div class="searchfade">
+						<form action="" method="get" id="searchform">
+							<input name="s" type="text" class="textfield" value="输入关键词并回车" onMouseOver="this.style.borderColor='#FF6600'" onMouseOut="this.style.borderColor=''" onFocus="if (value =='输入关键词并回车'){value =''}" onBlur="if (value ==''){value='输入关键词并回车'}">
+							<input type="submit" value="">
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div id="container">
+		<div class="con-inner clearfix">
+		<div class="container">
+		<div id="header">
+				<div id="logo">
+					<a href=""><img src="__RES__/images/logo.png" alt="June&#039;s Blog" /></a>	
+				</div>
+						
+				<div id="notice">
+					<div class="noticeavatar">
+						<img alt='' src='__RES__/images/8ba13dd556011e6e44a99b4900865111.jpg' class='avatar avatar-42 photo' height='42' width='42' />					
+					</div>
+					<div class="notocebg">
+						<div class="noticecontent">
+						天空下雨了，可以打伞；心下雨了，该怎么办呢						
+						</div>
+					</div>
+				</div>
+		</div>
+		<div id="headersep"></div>
+    <div id="roll">
+    	<div title="回到顶部" id="roll_top"></div>
+    	<div title="转到底部" id="fall"></div>
+    </div>
+		<div id="frame">
+			<a href="" target="_blank">
+				<img src="__RES__/images/bbdbe444288550204c968fe7002a97a9-1359448556.jpg" width="168" height="104" >
+			</a>
+			<a href="" target="_blank">
+				<img src="__RES__/images/bbdbe444288550204c968fe7002a97a9-1359448415.jpg" width="168" height="104" >
+			</a>
+			<a href="" target="_blank">
+				<img src="__RES__/images/0ad1de65175a52a16813cec92a2a8584-1359775514.jpg" width="168" height="104" >
+			</a>
+		</div>
+
+{__CONTENT__}
+
+	</div><!--end container-box-->
+	<div id="sidebar">
+		<div id="sidebar1">
+			<div id="sidebar_top"></div>
+			<div id="sidebar_body">
+			<!--自定义工具-->
+				<div class="slidediv sidebarp clearfix">	
+					<h3 class="randomposts">随机文章</h3>
+					<ul class="sidgeneralli clearfix">
+					<foreach name="randArt" item="art">
+			  			<li><a href="" rel="bookmark" title="{$art.title}">{$art.title}</a></li>
+			  		</foreach>
+					</ul>
+				</div>
+				<div class="sidebarheight"></div>
+				<div class="slidediv sidebarp clearfix">
+					<h3 class="recentposts">最近文章</h3>
+
+					<ul class="sidgeneralli clearfix">
+					<foreach name="recentArt" item="art">
+						<li><a href="" rel="bookmark" title="{$art.title}">{$art.title}</a></li>
+					</foreach>
+					</ul>
+				</div>
+				<div class="sidebarheight"></div>
+				<div class="slidediv sidebarp clearfix">
+					<h3 class="categories">文章分类</h3>
+						<ul class="tworow clearfix">
+						<foreach name="menu" item="m">	
+							<li class="cat-item cat-item-1"><a href="" title="查看 {$m.name} 下的所有文章">{$m.name}</a></li>	
+						</foreach>	
+						</ul>
+				</div>
+				<div class="sidebarheight"></div>
+				<div class="slidediv sidebarp clearfix">
+					<h3>记忆的风铃</h3>			
+					<div class="textwidget">曾经以为念念不忘的事情，就在我们念念不忘的过程，被我们遗忘了</div>
+				</div>
+				<div class="sidebarheight"></div>			
+				<div class="sidslide">
+					<div class="slider-wrapper">
+						<div id="slider" class="nivoSlider" style="z-index:0">
+							<a href="" target="_blank"><img src="__RES__/images/slide1.png" width="200" height="104" /></a>
+							<a href="" target="_blank"><img src="__RES__/images/slide2.png" width="200" height="104" /></a>
+							<a href="" target="_blank"><img src="__RES__/images/slide3.png" width="200" height="104" /></a>
+							<a href="" target="_blank"><img src="__RES__/images/slide4.png" width="200" height="104" /></a>
+							<a href="" target="_blank"><img src="__RES__/images/slide5.png" width="200" height="104" /></a>
+							<a href="" target="_blank"><img src="__RES__/images/slide6.png" width="200" height="104" /></a>
+						</div>
+					</div>
+				</div>
+				<div class="bgmusic">
+					<embed src="__RES__/images/dewplayer.swf?mp3=http://csdj.so/mp3.php/hacknick/17143/csdj.wma&amp;autostart=0&amp;autoreplay=1" wmode="transparent" height="20" width="240" type="application/x-shockwave-flash">
+				</div>
+			</div>
+			<div id="sidebar_footer"></div>
+		</div>
+		<div id="sidebar2">	
+			<div id="sidebar2_inner">
+				<div id="sidebar_top_2"></div>
+				<div id="sidebar_body_2">
+				<!--自定义工具-->
+				<div class="slidediv sidebarp clearfix">
+				<h3></h3> 
+        <h3 class="recentcommentsh3">最近评论</h3>
+		 		<ul class="recentcomments clearfix">
+				<li>
+					<span class='recentcommentsavatar'>
+					<img alt='' src='__RES__/images/1.png' class='avatar avatar-32 photo' height='32' width='32' />
+					</span>
+					<a href='' title='在 不能承受的生命之轻。 发表的评论'>手机号码任意显示 (可以免费测...</a>
+					<br>
+					<span class='recentcomments_author'>叶尼物作</span>
+					<span class='recentcomments_date'>2013-02-28 14:40:26</span>
+				</li>
+				<li>
+					<span class='recentcommentsavatar'>
+					<img alt='' src='__RES__/images/2.png' class='avatar avatar-32 photo' height='32' width='32' />
+					</span>
+					<a href='' title='在 不能承受的生命之轻。 发表的评论'>你的想法，在很多场合下都可以应...</a>
+					<br>
+					<span class='recentcomments_author'>妙巢官网</span>
+					<span class='recentcomments_date'>2013-02-28 05:01:18</span>
+				</li>
+				<li>
+					<span class='recentcommentsavatar'>
+					<img alt='' src='__RES__/images/3.png' class='avatar avatar-32 photo' height='32' width='32' />
+					</span>
+					<a href='' title='在 不能承受的生命之轻。 发表的评论'>希望多写些这么好的文章。</a>
+					<br>
+					<span class='recentcomments_author'>美国种玛官方网站</span>
+					<span class='recentcomments_date'>2013-02-28 04:56:02</span>
+				</li>
+				<li>
+					<span class='recentcommentsavatar'>
+						<img alt='' src='__RES__/images/4.png' class='avatar avatar-32 photo' height='32' width='32' />
+					</span>
+					<a href='' title='在 心结。 发表的评论'>分析的很透彻，很欣赏你的看法，...</a>
+					<br>
+					<span class='recentcomments_author'>网购火车票</span>
+					<span class='recentcomments_date'>2013-02-26 07:16:27</span>
+				</li>
+				<li>
+					<span class='recentcommentsavatar'>
+					<img alt='' src='__RES__/images/5.png' class='avatar avatar-32 photo' height='32' width='32' />
+					</span>
+					<a href='' title='在 不能承受的生命之轻。 发表的评论'>分析的很透彻，很欣赏你的看法，...</a>
+					<br>
+					<span class='recentcomments_author'>全国列车时刻表在线查询</span>
+					<span class='recentcomments_date'>2013-02-26 07:11:51</span>
+				</li>		
+				</ul>
+				</div>
+				<div class="sidebarheight"></div>						
+				<div class="faveweb">
+					<h3 class="favewebsh3">收藏 · FaveWebs</h3>
+					<div class="favewebs">
+						<div class="favewebcontent">
+							<div class="favewebpic">
+									<a href="/" target="_blank"><img src="__RES__/images/piclink2.png" width="66" height="66" ></a>
+								</div>
+							<div class="faveweblink">
+								<a href="/" target="_blank">Fave.com</a>
+							</div>
+							<div class="favewebrecommend">国内较好的美图分享网站，每时每刻都会有更新。在这里你会发现更多你喜爱的。</div>
+						</div>
+					</div>
+					<div class="favewebs">
+						<div class="favewebcontent">
+							<div class="favewebpic">
+								<a href="/" target="_blank"><img src="__RES__/images/yuedu.png" width="66" height="66" ></a>
+							</div>
+							<div class="faveweblink"><a href="/" target="_blank">悦读Yuedu.FM</a></div>
+							<div class="favewebrecommend">提供有质量的有声阅读体验，阅读也可以像听歌一样简单方便。倾听文字的声音，与心中的文字</div>
+						</div>
+					</div>
+				</div>
+				<div class="favelinks">
+					<div class="favelink">
+						<a href="/" target="_blank">豆瓣 douban.com &nbsp;&nbsp;</a>
+						提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。
+					</div>
+					<div class="favelinksep"></div>			
+					<div class="favelink">
+						<a href="/" target="_blank">SongTaste.com&nbsp;&nbsp;</a>
+						SongTaste是一个音乐分享产品，在众多网友分享的歌曲中你总会发现符合你品味的音乐，用音乐倾听彼此
+					</div>
+					<div class="favelinksep"></div>		
+				</div>
+			</div>
+		
+			<div id="sidebar_footer_2"></div>
+		</div>
+	</div>
+</div>
+	
+</div>
+</div>
+<div style="height:60px"></div>
+<div class="clear"></div>
+<div id="footer">
+<footer>
+	<div class="footerwrap">
+		<div class="copyright">
+			<div class="footerright left">© 2012 <a href="">June's Blog</a> All Rights Reserved</div>
+			<div class="themeauthor right">春水汤汤，一时无涯，柳絮轻软，流水尽飞花。　</div>
+		</div>
+		<div class="pendant">
+			<div class="blackboard"></div>			
+			<div class="paint"></div>			
+			<div class="box"></div>			
+			<div class="earphone"></div>			
+			<div class="snspart right">
+				<div class="sns">
+					<a href="" title="订阅RSS" class="sns_rss"></a>
+					<a href="" target="_blank" title="我的开心网" class="sns_kaixin"></a>
+					<a href="" target="_blank" title="我的人人网" class="sns_renren"></a>
+					<a href="" target="_blank" title="我的豆瓣" class="sns_douban"></a>
+				</div>
+				<div class="close"></div>
+			</div>
+		</div>
+	</div>
+</footer>
+</div>
+ 
+<div class="statistic">
+	<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F94faf94dd6aac28f8bc2c4cc456735f4' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+</div>
+ 
+<script src="__RES__/js/Mossight.js?"></script>
+<script type="text/javascript">$(function() {$("#content a[href*='.jpg'],a[href*='.png'],a[href*='.gif'],a[href*='.bmp'],a[href*='.jpeg']").lightBox({fixedNavigation:true});});</script>
+<script type="text/javascript" src="__RES__/js/lazyload.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('#slider').nivoSlider({
+			effect:'random', slices:15,boxCols: 8,boxRows: 4,animSpeed:500, pauseTime:4000, startSlide:0, directionNav:false,directionNavHide:false, controlNav:false, controlNavThumbs:false,controlNavThumbsFromRel:false,controlNavThumbsSearch: '.jpg',controlNavThumbsReplace: '_thumb.jpg',keyboardNav:true, pauseOnHover:true,manualAdvance:false, captionOpacity:0.8, prevText: 'Prev',nextText: 'Next',beforeChange: function(){},afterChange: function(){}, slideshowEnd: function(){},lastSlide: function(){}, afterLoad: function(){} 
+		});
+	});
+</script>

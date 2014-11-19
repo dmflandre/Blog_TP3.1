@@ -1,0 +1,93 @@
+<style>
+    .clear{
+        clear:both;
+        height:30px;
+    }
+    .section{
+        font-family:'Microsoft Yahei';
+        margin-bottom:30px;
+    }
+    .controller{
+        font-size:15px;
+        color:#333;
+        height:50px;
+        line-height:50px;
+        border-bottom:1px dashed #333;
+        color:red;
+    }
+    .actions{
+        padding:10px;
+        font-size:13px;
+        margin-top:15px;
+    }
+    .action{
+        float:left;
+        width:200px;
+        text-align:left;
+        height:30px;
+    }
+</style>
+<ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">设置权限</a></li>
+    </ul>
+    <div id="tab1" class="tabcontent">
+        <h3>给角色添加权限</h3>
+        <form action="{:U('Role/setauth')}" method="post">
+        <div class="form">
+            
+            <div class="form_row">
+            <label>请选择角色名称:</label>
+            <select class="form_select" name="rid">
+            <foreach name="roles" item="role">
+                <option value="{$role.id}">{$role.name}</option>
+            </foreach>
+            </select>
+            </div>
+
+            <div class="clear"></div>
+
+            
+
+            <h5>节点列表</h5>
+
+            <div id="controllers">
+
+            <foreach name="nodes" item="node">
+            
+            <div class="section">
+                <div class="controller">
+                <input type="checkbox" name="nid[]" value="{$node.id}" <if condition="in_array($node['id'],$nids)">checked</if> >
+                {$node.name}Action-{$node.zname}
+                </div>
+                <div class="actions">
+                <foreach name="node['actions']" item="action">
+                    <div class="action">
+                    <input type="checkbox" name="nid[]" value="{$action.id}" <if condition="in_array($action['id'],$nids)">checked</if> >
+                    {$action.name}-{$action.zname}</div>
+                </foreach>
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+            </foreach>
+
+            </div>
+
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="设置" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>
+
+<script>
+    $(".form_select[name=rid]").change(function(){
+        
+        $("#controllers").html("<img src='__PUBLIC__/images/loading.gif' width='50px'>别猴急，等一会就好...");
+        //ajax发送rid
+        $.get("{:U('Role/getAjaxList')}",{"rid":$(this).val()},function(data){
+            $("#controllers").html(data);
+        });
+    });
+</script>

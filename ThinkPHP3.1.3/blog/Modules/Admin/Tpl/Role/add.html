@@ -1,0 +1,20 @@
+    <ul id="tabsmenu" class="tabsmenu">
+        <li class="active"><a href="#tab1">角色管理</a></li>
+    </ul>
+    <div id="tab1" class="tabcontent">
+        <h3>添加角色</h3>
+        <form action="{:U('Role/doadd')}" method="post">
+        <div class="form">
+            
+            <div class="form_row">
+            <label>角色名称:</label>
+            <input type="text" class="form_input" name="name" />
+            </div>
+             
+            <div class="form_row">
+            <input type="submit" class="form_submit" value="Submit" />
+            </div> 
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>
